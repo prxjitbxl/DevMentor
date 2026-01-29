@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Color Variables - Light Mode Default */
+  --bg-background: #f5f5f7;
+  --bg-surface: #ffffff;
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --primary: #646cff;
+
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--bg-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  /* Color Variables - Dark Mode Overrides */
+  --bg-background: #1a1a1a;
+  --bg-surface: #242424;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --border-color: rgba(255, 255, 255, 0.1);
+  
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* Subtle mesh gradient using variables */
+  background: var(--bg-background);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@layer utilities {
+  .glass {
+    /* Frosted White Glass */
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm supports-[backdrop-filter]:bg-white/60;
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/80 transition-all duration-300;
+  }
+
+  .glass-panel {
+    /* Slightly more opaque for main content areas */
+    @apply bg-white/80 backdrop-blur-2xl border border-white/50 shadow-lg;
+  }
+
+  .text-subtle {
+    @apply text-gray-500;
+  }
+
+  .text-primary {
+    @apply text-gray-900;
+  }
+}
+
+/* Custom Scrollbar - Grey for light mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
