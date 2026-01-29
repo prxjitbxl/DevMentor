@@ -8,8 +8,8 @@ A powerful AI assistant designed to help developers build better software faster
 
 ## 🚀 Live Demo
 
-**Depolyment Link (Vercel):** [ INSERT_VERCEL_LINK_HERE ]
-
+**Depolyment Link (Vercel):** https://dev-mentor-pi.vercel.app/
+**GitHub Link - https://github.com/prxjitbxl/DevMentor
 ---
 
 ## 👥 Team Details
